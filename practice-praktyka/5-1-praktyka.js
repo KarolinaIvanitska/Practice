@@ -90,12 +90,92 @@
 //callback функції повинна множити елементи на 2
 //! Використай анонімну колбєк функцію
 
-const numbers = [1, 2, 4]
-const each = (array, callback) => {
-    const Newarray = []; 
-    array.forEach ((number) => {
-        newArray.push(callback(number))
-    });
-    return newArray;
-}
-console.log(each(numbers, (number) => number * 2));
+// const numbers = [1, 2, 4]
+// const each = (array, callback) => {
+//     const newArray = []; 
+//     array.forEach ((number) => {
+//         newArray.push(callback(number))
+//     });
+//     return newArray;
+// }
+
+// const multiply = number => number * 2;
+// console.log(each(numbers, multiply));
+
+//ABO:
+
+// console.log(each(numbers, (number) => number * 2));
+
+//TODO:============task-05=========================
+// Напишіть функцію, яка приймає масив чисел і колбек-функцію. 
+// Функція повинна повернути новий масив, у якому кожен елемент 
+// масиву перетворено згідно з логікою, яка визначається в 
+// колбек-функції. Колбек-функція приймає число, і повертає 
+// його ж, помножене на рандомне число від 1 до цього числа.
+
+// const numbers = [1, 23, 54, 212, 45, 7];
+// function transformArray(array, callback) {
+//     const result = [];
+
+//     array.forEach(element => {
+//         result.push(callback(element))
+//     });
+//     return result
+// }
+// function tranformNumber(num) {
+//     return Math.floor(Math.random() * num) + 1;
+// }
+
+// console.log(transformArray(numbers, tranformNumber));
+
+
+//TODO:============task-06=========================
+// Напишіть функцію, яка приймає масив і колбек-функцію. 
+// Функція повинна повернути перший елемент масиву,
+//який задовольняє умову, визначену в колбек - функції. 
+// Якщо такого елементу немає, функція
+// повинна повернути null. Також необхідно написати 2 різні колбеки. 
+// При використанні першого колбеку має
+// повертатись перше парне число. При використанні другого 
+// - має повертатись перше слово у масиві, що починається з літери
+// "O" у будь - якому реєстрі.
+
+
+// const numbers = [1, 3, 6, 7, 9, 20];
+// const words = ["apple", "banana", "orange", "pear"];
+
+//! Зауважте, що використання методу forEach не дозволяє 
+// прямо вийти з циклу після знаходження першого підходящого 
+// елемента. Тому ми використовуємо додаткову змінну result, 
+// щоб зберегти перший підходящий елемент та перевіряти, чи 
+// він вже був знайдений. forEach нічого не повертає, 
+// а просто перебирає масив!
+
+// function findEl(arr, callback) {
+//   let result = null;
+
+//   arr.forEach((el) => {
+//     if (callback(el) && result === null) {
+//       result = el;
+//     }
+//   });
+//   return result;
+// }
+// function isEven(number) {
+  //   if (number % 2 === 0) {
+  //     return true;
+  //   }
+  //   return false;
+//   return number % 2 === 0;
+// }
+// function statrWithO(str) {
+  //   if (str.toLowerCase().startsWith("o")) {
+  //     return true;
+  //   }
+  //   return false;
+//   return str.toLowerCase().startsWith("o");
+// }
+
+// console.log(findEl(numbers, isEven));
+// console.log(findEl(words, statrWithO));
+
